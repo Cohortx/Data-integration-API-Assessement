@@ -199,7 +199,7 @@ app.delete('/api/profiles/:id', async (c) => {
       return c.json({ status: 'error', message: error.message }, 500);
     }
 
-    return new Response(null, { status: 204, headers: corsHeaders });
+    return c.text('', 204);
   } catch (e) {
     return c.json({ status: 'error', message: 'Internal server error' }, 500);
   }
